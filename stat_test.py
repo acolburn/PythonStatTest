@@ -20,13 +20,27 @@ testList.append(aTest("independent samples t-test", 1, 1, 1, 0, 0))
 testList.append(aTest("dependent samples t-test", 1, 1, 1, 0, 1))
 testList.append(aTest("Mann-Whitney U-test", 1, 1, 0, 0, 0))
 testList.append(aTest("Wilcoxson matched pairs test", 1, 1, 0, 0, 1))
+testList.append(aTest("one-way independent ANOVA", 0, 1, 1, 0, 0))
+testList.append(aTest("Kruskall-Wallis test", 0, 1, 0, 0, 0))
+testList.append(aTest("one-way repeated measures ANOVA", 0, 1, 1, 0, 1))
+testList.append(aTest("Friedman's ANOVA", 0, 1, 0, 0, 1))
+# testList.append(aTest("Chi squared test",0,0,0,0,0))...check on this
+testList.append(aTest("ANCOVA", 0, 1, 1, 1, 0))
 
+print("All the tests ...")
 for test in testList:
-    if (test.paired == False and test.parametric == False):
-        print(test.name+" is independent samples and nonparametric.")
-    if (test.paired == False and test.parametric == True):
-        print(test.name+" is independent samples and parametric.")
-    if (test.paired == True and test.parametric == False):
-        print(test.name+" is matched and nonparametric.")
-    if (test.paired == True and test.parametric == True):
-        print(test.name+" is matched and parametric.")
+    print(test.name)
+
+print("All the parametric tests...")
+for test in testList:
+    if test.parametric == True:
+        print(test.name)
+
+print("Now, remove the nonparametric tests...")
+for test in testList:
+    if test.parametric == False:
+        testList.remove(test)
+
+print("...and print what's left")
+for test in testList:
+    print(test.name+", "+str(test.parametric))
