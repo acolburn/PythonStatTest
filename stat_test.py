@@ -22,7 +22,11 @@ testList.append(aTest("Mann-Whitney U-test", 1, 1, 0, 0, 0))
 testList.append(aTest("Wilcoxson matched pairs test", 1, 1, 0, 0, 1))
 
 for test in testList:
-    if test.paired == False:
-        print(test.name+" is unpaired.")
-    if test.parametric == True:
-        print(test.name + " is parametric.")
+    if (test.paired == False and test.parametric == False):
+        print(test.name+" is independent samples and nonparametric.")
+    if (test.paired == False and test.parametric == True):
+        print(test.name+" is independent samples and parametric.")
+    if (test.paired == True and test.parametric == False):
+        print(test.name+" is matched and nonparametric.")
+    if (test.paired == True and test.parametric == True):
+        print(test.name+" is matched and parametric.")
