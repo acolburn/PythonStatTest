@@ -1,11 +1,4 @@
 class aTest:
-    name = ""
-    twoGroups = -1
-    continuous = -1
-    parametric = -1
-    covariates = -1
-    paired = -1
-
     def __init__(self, name, twoGroups, continuous, parametric, covariates, paired):
         self.name = name
         self.twoGroups = twoGroups
