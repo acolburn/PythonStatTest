@@ -24,11 +24,6 @@ print("All the tests ...")
 for test in testList:
     print(test.name)
 
-print("All the parametric tests...")
-for test in testList:
-    if test.parametric == True:
-        print(test.name)
-
 print("Now, remove the nonparametric tests...")
 # can't just iterate through list and remove certain items
 # when you delete one item, the other indexes change too
@@ -41,4 +36,13 @@ for test in list(testList):
 
 print("...and print what's left")
 for test in testList:
-    print(test.name+", "+str(test.parametric))
+    print(test.name)
+
+print("Next, remove test requiring two groups...")
+for test in list(testList):
+    if test.twoGroups == True:
+        testList.remove(test)
+
+print("...and print what's left")
+for test in testList:
+    print(test.name)
