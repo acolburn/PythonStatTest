@@ -37,7 +37,12 @@ for test in testList:
         print(test.name)
 
 print("Now, remove the nonparametric tests...")
-for test in testList:
+# can't just iterate through list and remove certain items
+# when you delete one item, the other indexes change too
+# so we iterate through a copy of the list and remove
+# from the original list--without moving from item to item
+# in the original
+for test in list(testList):
     if test.parametric == False:
         testList.remove(test)
 
