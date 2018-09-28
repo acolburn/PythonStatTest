@@ -10,7 +10,6 @@ p - My data is parametric
 n - My data is nonparametric
 c - My data includes a covariate
 v - My data does not include a covariate
-q - I am done. Let\'s quit!
 Your selection: '''
 
 
@@ -41,3 +40,4 @@ while (selection != 'q'):
     selection = input(s)
     processSelection(selection)
     printList()
+    selection = input("Enter q to quit: ")
