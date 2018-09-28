@@ -9,6 +9,7 @@ m - My groups are matched or dependent
 p - My data is parametric
 n - My data is nonparametric
 c - My data includes a covariate
+v - My data does not include a covariate
 q - I am done. Let\'s quit!
 Your selection: '''
 
@@ -30,6 +31,8 @@ def processSelection(selection):
         isNotParametric()
     elif (selection == 'c'):
         hasCovariate()
+    elif (selection == 'v'):
+        hasNoCovariate()
 
 
 makeList()
