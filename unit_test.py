@@ -40,4 +40,4 @@ while (selection != 'q'):
     selection = input(s)
     processSelection(selection)
     printList()
-    selection = input("Enter q to quit: ")
+    selection = input("Enter q to quit, ENTER to continue: ")
