@@ -21,7 +21,7 @@ def makeList():
     testList.append(aTest("one-way repeated measures ANOVA", 0, 1, 1, 0, 1))
     testList.append(aTest("Friedman's ANOVA", 0, 1, 0, 0, 1))
     # testList.append(aTest("Chi squared test",0,0,0,0,0))...check on this
-    testList.append(aTest("ANCOVA", 0, 1, 1, 1, 0))
+    testList.append(aTest("ANCOVA", -1, 1, 1, 1, 0))
 
 
 def printList():
